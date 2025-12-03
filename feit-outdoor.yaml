@@ -1,0 +1,58 @@
+esphome:
+  name: feit-outdoor-relay
+  friendly_name: Outdoor Plug (Feit BPPLUG/WIFI/WP/2)
+  # Automatically add the mac address to the name
+  # so you can use a single firmware for all devices
+  name_add_mac_suffix: true
+
+esp8266:
+  board: esp01_1m
+  framework:
+      version: recommended
+
+# To be able to get logs from the device via serial and api.
+logger:
+
+# API is a requirement of the dashboard import.
+api:
+
+# OTA is required for Over-the-Air updating
+ota:
+  - platform: esphome
+
+wifi:
+  # Set up a wifi access point using the device name above
+  ap:
+
+# In combination with the `ap` this allows the user
+# to provision wifi credentials to the device.
+captive_portal:
+
+# Device configuration
+
+output:
+  - platform: gpio
+    id: relay
+    pin:
+      number: GPIO12
+      inverted: False
+
+status_led:
+  pin:
+    number: GPIO5
+    inverted: yes
+
+light:
+  - platform: binary
+    id: outlet
+    # name: '${device_name}'
+    name: none
+    output: relay
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO13
+    id: 'button'
+    on_press:
+      - light.toggle: outlet
