@@ -20,8 +20,8 @@ jobs:
       max-parallel: 3
       matrix:
         #### Modify below here to match your project ####
-        file:
-          - project-template-esp32
+        file: 
+          - feit-outdoor
         #### Modify above here to match your project ####
 
         esphome-version:
