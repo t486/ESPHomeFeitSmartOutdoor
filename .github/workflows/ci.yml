@@ -22,18 +22,14 @@ jobs:
         #### Modify below here to match your project ####
         file:
           - project-template-esp32
-          - project-template-esp32-c3
-          - project-template-esp32-c6
-          - project-template-esp32-s3
         #### Modify above here to match your project ####
 
         esphome-version:
           - stable
-          - beta
-          - dev
+
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: ESPHome ${{ matrix.esphome-version }}
         uses: esphome/build-action@v7
         with:
