@@ -27,4 +27,4 @@ update:
   - platform: http_request
     name: None
     id: update_http_request
-    source: https://github.com/t486/ESPHomeFeitSmartOutdoor/releases/latest/download/project-template.manifest.json
+    source: https://github.com/t486/ESPHomeFeitSmartOutdoor/releases/latest/download/feit-outdoor-relay.manifest.json
