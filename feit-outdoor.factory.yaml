@@ -25,6 +25,6 @@ ota:
 
 update:
   - platform: http_request
-    name: None
+    name: Firmware
     id: update_http_request
     source: https://github.com/t486/ESPHomeFeitSmartOutdoor/releases/latest/download/feit-outdoor-relay.manifest.json
